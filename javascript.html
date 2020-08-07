@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+<script>
+// 	class Car {
+// 	var username = "puhupwas"
+// 	function scooter(){
+// 		alert('you are ');
+// 		}
+// }
+
+// var object = new Car();
+// object.username;
+// //object.scooter();
+// //alert(b);
+function init2(){
+	//alert('hi');
+	var ajaxobject = new XMLHttpRequest();
+	ajaxobject.open("POST", "javascript.php" , true);
+	ajaxobject.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+	ajaxobject.onreadystatechange = function(){
+		if(ajaxobject.readyState == 4 && ajaxobject.status == 200)
+			document.getElementById('container').innerHTML = ajaxobject.responseText;
+	}
+	ajaxobject.send("username=Puhupwas&password=puhupwasispassword");
+}
+// init2();
+</script>
+<button onclick="init2()">Click</button>
+<div id="container" style="background-color: skyblue;width:500px;height:200px">
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+	<script>
+		$(document).ready(function(){
+// $('#result').toggle();
+			$('#search').keyup(function(){
+				
+				var search = $('#search').val();
+				// document.write(search);
+				//alert('puhsdfljsl');
+				$.ajax({
+					url:'search.php',
+					data:{search:search},
+					type:'POST',
+					success:function(data){
+						if(!data.error){
+							$('#result').html(data);
+						} else {
+							alert('puhupwas');
+						}
+					}
+				})
+
+			})
+			//$('#result')..slideDown();
+		})
+	</script>
+
+<div style="width:50%;" id="container" class="col-xs-6 col-xs-offset-6 text-center"  >
+	<h2>Search in the Database</h2>
+	<input type="text" class="form-control" name="search"  id="search" placeholder="Search in the database">
+	
+	<h2  id="result" style=' background: 221, 237, 225'>
+		
+	</h2>
+</div>
+
+</body>
+</html>
