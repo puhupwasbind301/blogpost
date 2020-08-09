@@ -2,12 +2,12 @@
 
 
 
-$servername = "localhost";
-$username = "root";
-$db = "ajaxcrudprojectdb";
-
+$servername = "ec2-34-200-15-192.compute-1.amazonaws.com";
+$username = "iloiilkwablohj";
+$db = "d2anv05ljnbqct";
+$password = '376ae073f6793a36bde44362cb4459998b56ebab5e6f4b63b1d27d6194b71821';
 // Create connection
-$conn = mysqli_connect($servername, $username, '', $db);
+$conn = mysqli_connect($servername, $username, $password, $db);
 
 // Check connection
 // if (!$conn) {
